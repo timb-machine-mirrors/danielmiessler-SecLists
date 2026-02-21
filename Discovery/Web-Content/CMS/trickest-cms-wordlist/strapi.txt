@@ -396,6 +396,7 @@ tests/api/core/strapi/document-service/resources/types/components.d.ts
 tests/api/core/strapi/document-service/resources/types/contentTypes.d.ts
 tests/api/core/strapi/document-service/validation/validation.test.api.ts
 tests/api/core/strapi/document-service/update.test.api.ts
+tests/api/core/strapi/document-service/has-published-version.test.api.ts
 tests/api/core/strapi/document-service/utils/index.ts
 tests/api/core/strapi/document-service/find-one.test.api.ts
 tests/api/core/strapi/document-service/document-id-uniqueness.test.api.ts
@@ -468,6 +469,7 @@ tests/api/plugins/graphql/crud.test.api.js
 tests/api/plugins/graphql/single-type.test.api.js
 tests/api/plugins/graphql/utils.test.api.js
 tests/api/plugins/graphql/dp-relations.test.api.js
+tests/api/plugins/graphql/has-published-version.test.api.js
 tests/api/plugins/content-releases/homepage.test.api.ts
 tests/api/plugins/content-releases/releases.test.api.ts
 tests/api/plugins/i18n/content-manager/non-localized-fields.test.api.js
@@ -1094,6 +1096,7 @@ examples/complex/package.json
 lint-staged.config.js
 playwright.base.config.js
 .gitattributes
+vitest.config.ts
 fileTransformer.js
 CONTRIBUTING.md
 jest.config.cli.js
@@ -1102,6 +1105,7 @@ nx.json
 codecov.yml
 scripts/remove-dist-tag.sh
 scripts/pre-publish.sh
+scripts/check-package-versions.mjs
 scripts/front/add-missing-keys-to-other-language.js
 scripts/front/tests/en.json
 scripts/front/tests/add-missing-keys-to-other-language.test.js
@@ -1484,9 +1488,9 @@ packages/core/core/src/configuration/config-loader.ts
 packages/core/core/src/configuration/index.ts
 packages/core/core/src/configuration/urls.ts
 packages/core/core/src/utils/cron.ts
-packages/core/core/src/utils/__tests__/filepath-to-prop-path.test.ts
-packages/core/core/src/utils/__tests__/transform-content-types-to-models.test.ts
-packages/core/core/src/utils/__tests__/convert-custom-field-type.test.ts
+packages/core/core/src/utils/__tests__/convert-custom-field-type.vitest.test.ts
+packages/core/core/src/utils/__tests__/transform-content-types-to-models.vitest.test.ts
+packages/core/core/src/utils/__tests__/filepath-to-prop-path.vitest.test.ts
 packages/core/core/src/utils/ee.ts
 packages/core/core/src/utils/signals.ts
 packages/core/core/src/utils/lifecycles.ts
@@ -1563,6 +1567,7 @@ packages/core/core/src/loaders/plugins/get-enabled-plugins.ts
 packages/core/core/src/loaders/policies.ts
 packages/core/core/src/loaders/apis.ts
 packages/core/core/src/loaders/validators.ts
+packages/core/core/vitest.config.ts
 packages/core/core/tsconfig.json
 packages/core/core/package.json
 packages/core/content-manager/.npmignore
@@ -3604,11 +3609,10 @@ packages/core/upload/admin/src/future/pages/Assets/hooks/tests/useInfiniteAssets
 packages/core/upload/admin/src/future/pages/Assets/hooks/useInfiniteAssets.ts
 packages/core/upload/admin/src/future/pages/Assets/constants.ts
 packages/core/upload/admin/src/future/pages/Assets/components/AssetsTable.tsx
+packages/core/upload/admin/src/future/pages/Assets/components/DropZone/UploadDropZone.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/DropZone/UploadDropZoneContext.tsx
-packages/core/upload/admin/src/future/pages/Assets/components/DropZone/DropZoneWithOverlay.tsx
 packages/core/upload/admin/src/future/pages/Assets/components/AssetsGrid.tsx
 packages/core/upload/admin/src/future/pages/Assets/AssetsPage.tsx
-packages/core/upload/admin/src/future/pages/AIGenerationPage.tsx
 packages/core/upload/admin/src/future/services/settings.ts
 packages/core/upload/admin/src/future/services/api.ts
 packages/core/upload/admin/src/future/services/assets.ts
@@ -3616,6 +3620,10 @@ packages/core/upload/admin/src/future/enums.ts
 packages/core/upload/admin/src/future/utils/translations.ts
 packages/core/upload/admin/src/future/utils/getAssetIcon.ts
 packages/core/upload/admin/src/future/utils/files.ts
+packages/core/upload/admin/src/future/components/tests/UploadProgressDialog.test.tsx
+packages/core/upload/admin/src/future/components/UploadProgressDialog.tsx
+packages/core/upload/admin/src/future/store/hooks.ts
+packages/core/upload/admin/src/future/store/uploadProgress.ts
 packages/core/upload/admin/src/future/App.tsx
 packages/core/upload/admin/src/pluginId.ts
 packages/core/upload/admin/src/translations/he.json
@@ -4552,6 +4560,11 @@ packages/utils/logger/src/index.ts
 packages/utils/logger/src/constants.ts
 packages/utils/logger/tsconfig.json
 packages/utils/logger/package.json
+packages/utils/vitest-config/README.md
+packages/utils/vitest-config/LICENSE
+packages/utils/vitest-config/src/presets/unit.ts
+packages/utils/vitest-config/tsconfig.json
+packages/utils/vitest-config/package.json
 packages/utils/eslint-config-custom/front/index.js
 packages/utils/eslint-config-custom/front/typescript.js
 packages/utils/eslint-config-custom/back/index.js
@@ -4778,6 +4791,7 @@ packages/plugins/graphql/server/src/services/internals/helpers/index.ts
 packages/plugins/graphql/server/src/services/internals/helpers/get-enabled-scalars.ts
 packages/plugins/graphql/server/src/services/internals/args/publication-status.ts
 packages/plugins/graphql/server/src/services/internals/args/index.ts
+packages/plugins/graphql/server/src/services/internals/args/has-published-version.ts
 packages/plugins/graphql/server/src/services/internals/args/sort.ts
 packages/plugins/graphql/server/src/services/internals/args/pagination.ts
 packages/plugins/graphql/server/src/services/internals/types/publication-status.ts
@@ -5404,3 +5418,4 @@ packages/admin-test-utils/package.json
 yarn.lock
 jsconfig.json
 package.json
+.syncpackrc.json

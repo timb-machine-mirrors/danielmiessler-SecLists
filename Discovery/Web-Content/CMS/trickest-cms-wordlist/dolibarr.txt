@@ -43,6 +43,7 @@ test/phpunit/imap_header.txt
 test/phpunit/Functions2LibTest.php
 test/phpunit/AssetModelTest.php
 test/phpunit/WorkstationTest.php
+test/phpunit/PhpSessionInDbTest.php
 test/phpunit/MemoTest.php
 test/phpunit/FunctionsNumToWordTest.php
 test/phpunit/SecurityTest.php
@@ -53,6 +54,7 @@ test/phpunit/test.php
 test/phpunit/file_import_company_1.csv
 test/phpunit/ScriptsTest.php
 test/phpunit/EmailCollectorTest.php
+test/phpunit/AssetDepreciationTest.php
 test/phpunit/PricesTest.php
 test/phpunit/TvaTest.php
 test/phpunit/FormTest.php
@@ -12645,6 +12647,7 @@ htdocs/website/websiteaccount_card.php
 htdocs/website/index.php
 htdocs/website/class/website.class.php
 htdocs/website/class/websitepage.class.php
+htdocs/website/class/api_websites.class.php
 htdocs/website/lib/websiteaccount.lib.php
 htdocs/website/lib/website.lib.php
 htdocs/waf.inc.php

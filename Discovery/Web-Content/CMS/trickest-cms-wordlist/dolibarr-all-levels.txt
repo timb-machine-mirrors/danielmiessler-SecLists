@@ -123,6 +123,9 @@ AssetModelTest.php
 test/phpunit/WorkstationTest.php
 phpunit/WorkstationTest.php
 WorkstationTest.php
+test/phpunit/PhpSessionInDbTest.php
+phpunit/PhpSessionInDbTest.php
+PhpSessionInDbTest.php
 test/phpunit/MemoTest.php
 phpunit/MemoTest.php
 MemoTest.php
@@ -153,6 +156,9 @@ ScriptsTest.php
 test/phpunit/EmailCollectorTest.php
 phpunit/EmailCollectorTest.php
 EmailCollectorTest.php
+test/phpunit/AssetDepreciationTest.php
+phpunit/AssetDepreciationTest.php
+AssetDepreciationTest.php
 test/phpunit/PricesTest.php
 phpunit/PricesTest.php
 PricesTest.php
@@ -61273,6 +61279,10 @@ htdocs/website/class/websitepage.class.php
 website/class/websitepage.class.php
 class/websitepage.class.php
 websitepage.class.php
+htdocs/website/class/api_websites.class.php
+website/class/api_websites.class.php
+class/api_websites.class.php
+api_websites.class.php
 htdocs/website/lib/websiteaccount.lib.php
 website/lib/websiteaccount.lib.php
 lib/websiteaccount.lib.php
